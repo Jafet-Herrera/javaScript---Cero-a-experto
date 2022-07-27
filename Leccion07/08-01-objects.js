@@ -133,3 +133,46 @@ console.log( personaArray );
 let personaString = JSON.stringify( persona );
 
 console.log( personaString );
+
+
+//* ----------------- 68. Método get en objetos de JavaScript --------------------------------------------
+// get: permite acceder a los valores de las propiedades de los objetos.
+persona = {
+    nombre: 'Juan',                 //
+    apellido: 'Perez',              // Propiedades del objeto
+    email: 'ejemplo@correo.com',    //
+    edad:  28  ,                    //
+    get nombreCompleto(){     // Propiedad con referencia a una función
+        return this.nombre+ " " +this.apellido;
+    }
+}
+
+console.log(persona.nombreCompleto);
+
+
+//* ----------------- 68. Método set en objetos de JavaScript --------------------------------------------
+// set: Permite modificar los valores de prpoedades de los objetos.
+
+persona = {
+    nombre: 'Juan',                 //
+    apellido: 'Perez',              // Propiedades del objeto
+    email: 'ejemplo@correo.com',    //
+    edad:  28  ,   
+    idioma : 'es',  
+    get lang(){
+        return this.idioma.toUpperCase();
+    }, 
+    set lang( lang ){
+        this.idioma = lang.toUpperCase();
+    },              //
+    get nombreCompleto(){     // Propiedad con referencia a una función
+        return this.nombre+ " " +this.apellido;
+    }
+}
+
+console.log(persona.lang);
+
+persona.lang = "en";
+
+console.log(persona.lang);
+console.log(persona.idioma);
